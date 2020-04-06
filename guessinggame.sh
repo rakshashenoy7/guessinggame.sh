@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
-# File: guessinggame.sh
 
-function getthecount {
-  cnt=$(find . -maxdepth 1 -type f|wc -l)
-  echo $cnt
+echo "HELLO PLAYERS WELCOME!!"
+
+function tell {
+	echo "ENTER THE NUMBER OF FILES IN CDIRECTORY!!"
+	read right
+    file=$(ls -1 | wc -l)
 }
 
-count=$(getthecount)
-echo "Hello! "
-echo "Guess the number of files "
-read num
+tell
 
-while [[ $count -ne $num ]]
+while [[ $right -ne $file ]]
 do
-  if [[ $count -gt $num ]]
-  then
-    echo "It's small! "
-    read num
-  elif [[ $count -lt $num ]]
-  then
-    echo "It's much!"
-    read num
-  fi
+	if [[ $right -lt $file ]] 
+	then
+		echo "entered number is very low!!!"
+	else
+		echo "Entered number exceeds the expected number"
+	fi
+	tell
 done
 
-echo " You are WINNER!"
+echo "HURRAY!! YOU GUESSED IT RIGHT!!"
+
