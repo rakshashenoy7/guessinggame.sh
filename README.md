@@ -4,4 +4,4 @@ description:Create a program  guessinggame.sh. This should ask the user to guess
 
 date:07-04-2020
 
-number of lines in the program:25
+number of lines in the program:24
